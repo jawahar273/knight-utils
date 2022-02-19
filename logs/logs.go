@@ -11,7 +11,7 @@ import (
 var Logger *zap.Logger
 
 // SetupZap any custom format can done here
-func setupzap() {
+func Setupzap() {
 	Logger, _ = zap.NewDevelopment()
 }
 
