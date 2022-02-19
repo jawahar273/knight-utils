@@ -1,4 +1,4 @@
-package logger
+package logs
 
 import (
 	"time"
@@ -11,7 +11,7 @@ import (
 var Logger *zap.Logger
 
 // SetupZap any custom format can done here
-func SetUpZap() {
+func setupzap() {
 	Logger, _ = zap.NewDevelopment()
 }
 
