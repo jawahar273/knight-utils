@@ -31,6 +31,10 @@ func Error(msg string, fields ...zap.Field) {
 	Logger.Error(msg, fields...)
 }
 
+func ErrorField(err error) zap.Field {
+	return zap.Error(err)
+}
+
 func LogMiddleware(router *gin.Engine) {
 	// Logs
 	// logger, _ := zap.NewProduction()
