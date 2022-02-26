@@ -57,9 +57,9 @@ func ResponseError(c *gin.Context, code int, msg string) {
 	})
 }
 
-func RouterNotFound(c *gin.Context, msg string) {
+func ResponseNotFound(c *gin.Context, msg string) {
 	c.JSON(http.StatusNotFound, responseError{
-		Code:  NOTFOUND,
+		Code:  NOT_FOUND,
 		Error: msg,
 	})
 }

@@ -4,17 +4,17 @@ import "net/http"
 
 const (
 	// SUCCESS http code 200
-	SUCCESS       = http.StatusOK
-	CREATESUCCESS = http.StatusCreated
+	SUCCESS        = http.StatusOK
+	CREATE_SUCCESS = http.StatusCreated
 
 	// Client error
-	INVALIDREQUEST = http.StatusBadRequest
-	UNAUTHORIZED   = http.StatusUnauthorized
-	FORBIDDEN      = http.StatusForbidden
-	NOTFOUND       = http.StatusNotFound
-	METHODNOTALLOW = http.StatusMethodNotAllowed
+	INVALID_REQUEST  = http.StatusBadRequest
+	UNAUTHORIZED     = http.StatusUnauthorized
+	FORBIDDEN        = http.StatusForbidden
+	NOTFOUND         = http.StatusNotFound
+	METHOD_NOT_ALLOW = http.StatusMethodNotAllowed
 
 	// Server error
-	SERVERERROR        = http.StatusInternalServerError
-	SERVICEUNAVAILABLE = http.StatusServiceUnavailable
+	SERVER_ERROR        = http.StatusInternalServerError
+	SERVICE_UNAVAILABLE = http.StatusServiceUnavailable
 )
