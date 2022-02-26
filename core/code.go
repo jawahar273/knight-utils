@@ -9,9 +9,9 @@ const (
 
 	// Client error
 	INVALID_REQUEST  = http.StatusBadRequest
-	UNAUTHORIZED     = http.StatusUnauthorized
+	UN_AUTHORIZED    = http.StatusUnauthorized
 	FORBIDDEN        = http.StatusForbidden
-	NOTFOUND         = http.StatusNotFound
+	NOT_FOUND        = http.StatusNotFound
 	METHOD_NOT_ALLOW = http.StatusMethodNotAllowed
 
 	// Server error

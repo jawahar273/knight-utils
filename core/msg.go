@@ -2,10 +2,12 @@ package core
 
 // MsgFlag list of code and message
 var MsgFlag = map[int]string{
-	SUCCESS:         "ok",
-	SERVER_ERROR:    "fail",
-	INVALID_REQUEST: "wrong parameter",
-	CREATE_SUCCESS:  "entity created successfully",
+	SUCCESS:          "ok",
+	SERVER_ERROR:     "sometime went wrong",
+	INVALID_REQUEST:  "invalid request",
+	CREATE_SUCCESS:   "entity created successfully",
+	UN_AUTHORIZED:    "unauthorized user",
+	METHOD_NOT_ALLOW: "method not allowed",
 }
 
 // GetMsg get message based code
