@@ -2,15 +2,15 @@ package core
 
 // MsgFlag list of code and message
 var MsgFlag = map[int]string{
-	success:        "ok",
-	invalidRequest: "invalid request",
-	createSuccess:  "entity created successfully",
+	Success:        "ok",
+	InvalidRequest: "invalid request",
+	CreateSuccess:  "entity created successfully",
 	// 4xx
-	unAuthorized:   "unauthorized user",
-	methodNotAllow: "method not allowed",
-	notFound:       "not found",
+	UnAuthorized:   "unauthorized user",
+	MethodNotAllow: "method not allowed",
+	NotFound:       "not found",
 	// 5xx
-	serverError: "sometime went wrong",
+	ServerError: "sometime went wrong",
 }
 
 // GetMsg get message based code
@@ -19,5 +19,5 @@ func GetMsg(code int) string {
 	if ok {
 		return msg
 	}
-	return MsgFlag[serverError]
+	return MsgFlag[ServerError]
 }

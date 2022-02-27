@@ -9,12 +9,12 @@ import (
 func TestGetMsg(t *testing.T) {
 	assert := assert.New(t)
 
-	assert.Equal(GetMsg(success), "ok")
-	assert.Equal(GetMsg(serverError), "sometime went wrong")
-	assert.Equal(GetMsg(invalidRequest), "invalid request")
-	assert.Equal(GetMsg(createSuccess), "entity created successfully")
-	assert.Equal(GetMsg(unAuthorized), "unauthorized user")
-	assert.Equal(GetMsg(methodNotAllow), "method not allowed")
-	assert.Equal(GetMsg(notFound), "not found")
+	assert.Equal(GetMsg(Success), "ok")
+	assert.Equal(GetMsg(ServerError), "sometime went wrong")
+	assert.Equal(GetMsg(InvalidRequest), "invalid request")
+	assert.Equal(GetMsg(CreateSuccess), "entity created successfully")
+	assert.Equal(GetMsg(UnAuthorized), "unauthorized user")
+	assert.Equal(GetMsg(MethodNotAllow), "method not allowed")
+	assert.Equal(GetMsg(NotFound), "not found")
 
 }

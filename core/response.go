@@ -27,7 +27,7 @@ type ErrorFieldAndMessage struct {
 type responseError struct {
 	Code   int                    `json:"code"`
 	Errors []ErrorFieldAndMessage `json:"errors,omitempty"`
-	Detail string                 `json:"detail",emitempty`
+	Detail string                 `json:"detail,omitempty"`
 	Title  string                 `json:"title"`
 }
 
