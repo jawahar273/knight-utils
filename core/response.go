@@ -18,7 +18,7 @@ type responsePagination struct {
 	Page Pagination  `json:"page"`
 }
 
-// ErrorField are use to display the field of error and reason under message attribute
+// ErrorFieldAndMessage are use to display the field of error and reason under message attribute
 type ErrorFieldAndMessage struct {
 	Field   string `json:"field"`
 	Message string `json:"message"`
@@ -27,7 +27,7 @@ type ErrorFieldAndMessage struct {
 type responseError struct {
 	Code   int                    `json:"code"`
 	Errors []ErrorFieldAndMessage `json:"errors,omitempty"`
-	Msg    string                 `json:"message"`
+	Detail string                 `json:"detail",emitempty`
 	Title  string                 `json:"title"`
 }
 
@@ -69,11 +69,11 @@ func ResponseSuccess(c *gin.Context, code int, data interface{}) {
 //	"message": ""
 // }
 func ResponseError(c *gin.Context, code int, msg string, errors []ErrorFieldAndMessage) {
-	c.JSON(code, responseError{
+	c.AbortWithStatusJSON(code, responseError{
 		Code:   code,
 		Title:  GetMsg(code),
 		Errors: errors,
-		Msg:    msg,
+		Detail: msg,
 	})
 }
 
