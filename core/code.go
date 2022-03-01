@@ -7,6 +7,9 @@ const (
 	Success       = http.StatusOK
 	CreateSuccess = http.StatusCreated
 
+	// Redirect
+	UnModifiedRedirect = http.StatusNotModified
+
 	// Client error
 	InvalidRequest = http.StatusBadRequest
 	UnAuthorized   = http.StatusUnauthorized
