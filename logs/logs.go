@@ -12,7 +12,7 @@ var Logger *zap.Logger
 
 // SetupZap any custom format can done here
 func Setupzap() {
-	Logger, _ = zap.NewDevelopment()
+	Logger, _ = zap.NewProduction()
 }
 
 func Info(msg string, fields ...zap.Field) {

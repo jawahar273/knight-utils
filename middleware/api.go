@@ -31,5 +31,10 @@ import (
 func DefaultSecureGinMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		secure.New(secure.DefaultConfig())
+		c.Header("X-Content-Type-Options", "nosniff")
+		c.Header("X-Frame-Options", "deny")
+		c.Header("Content-Security-Policy", "default-src 'none'")
+		c.Header("X-Powered-By", "")
+		c.Header("content-type", "application/json")
 	}
 }

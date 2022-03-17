@@ -10,6 +10,7 @@ var MsgFlag = map[int]string{
 	UnAuthorized:   "unauthorized user",
 	MethodNotAllow: "method not allowed",
 	NotFound:       "not found",
+	NotAcceptable:  "no accepted by server",
 	// 5xx
 	ServerError: "sometime went wrong",
 }

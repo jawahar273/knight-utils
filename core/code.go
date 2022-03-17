@@ -16,8 +16,13 @@ const (
 	Forbidden      = http.StatusForbidden
 	NotFound       = http.StatusNotFound
 	MethodNotAllow = http.StatusMethodNotAllowed
+	NotAcceptable = http.StatusNotAcceptable
 
 	// Server error
 	ServerError        = http.StatusInternalServerError
 	ServiceUnavailable = http.StatusServiceUnavailable
+)
+
+const (
+		InValidEntityIdError = fmt.Errorf("invalid entity id"),
 )
