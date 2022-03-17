@@ -1,9 +1,8 @@
 package middleware
 
 import (
-	"../core/code"
-	"../core/response"
 	"github.com/gin-gonic/gin"
+	"github.com/jawahar273/knight-utils/core"
 )
 
 func HasAuthorizationHeader() gin.HandlerFunc {
@@ -11,7 +10,7 @@ func HasAuthorizationHeader() gin.HandlerFunc {
 		auth := c.Request.Header["Authorization"]
 		if auth == nil || auth == "" {
 			response.ResponseError(
-				c, code.UnAuthorized, "invalid or missing authorization token",
+				c, core.UnAuthorized, "invalid or missing authorization token",
 			)
 		}
 	}
