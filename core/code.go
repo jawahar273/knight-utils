@@ -26,4 +26,4 @@ const (
 	ServiceUnavailable = http.StatusServiceUnavailable
 )
 
-var InValidEntityIdError = fmt.Errorf("invalid entity id")
+var ErrInValidEntityId = fmt.Errorf("invalid entity id")
