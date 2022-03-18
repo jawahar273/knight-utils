@@ -1,6 +1,9 @@
 package core
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 const (
 	// SUCCESS http code 200
@@ -16,13 +19,11 @@ const (
 	Forbidden      = http.StatusForbidden
 	NotFound       = http.StatusNotFound
 	MethodNotAllow = http.StatusMethodNotAllowed
-	NotAcceptable = http.StatusNotAcceptable
+	NotAcceptable  = http.StatusNotAcceptable
 
 	// Server error
 	ServerError        = http.StatusInternalServerError
 	ServiceUnavailable = http.StatusServiceUnavailable
 )
 
-const (
-		InValidEntityIdError = fmt.Errorf("invalid entity id"),
-)
+var InValidEntityIdError = fmt.Errorf("invalid entity id")
