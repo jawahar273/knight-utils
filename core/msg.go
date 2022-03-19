@@ -73,11 +73,10 @@ var grpcHttpMsg = map[codes.Code]int{
 	codes.DeadlineExceeded: GatewayTimeOut,
 }
 
-func GrpcCodeToHttpCode(code codes.Code) string {
+func GrpcCodeToHttpCode(code codes.Code) int {
 	httpStatusCode, ok := grpcHttpMsg[code]
 	if ok {
-		return GetMsg(httpStatusCode)
+		return httpStatusCode
 	}
-
-	return GetMsg(grpcHttpMsg[codes.Unknown])
+	return ServerError
 }
