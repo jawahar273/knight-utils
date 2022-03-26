@@ -8,27 +8,31 @@ import (
 	"go.uber.org/zap"
 )
 
-var Logger *zap.Logger
+var logger *zap.Logger
 
 // SetupZap any custom format can done here
 func Setupzap() {
-	Logger, _ = zap.NewProduction()
+	logger, _ = zap.NewProduction()
+}
+
+func SetupDevzap() {
+	logger, _ = zap.NewDevelopment()
 }
 
 func Info(msg string, fields ...zap.Field) {
-	Logger.Info(msg, fields...)
+	logger.Info(msg, fields...)
 }
 
 func Debug(msg string, fields ...zap.Field) {
-	Logger.Debug(msg, fields...)
+	logger.Debug(msg, fields...)
 }
 
 func Fatal(msg string, fields ...zap.Field) {
-	Logger.Fatal(msg, fields...)
+	logger.Fatal(msg, fields...)
 }
 
 func Error(msg string, fields ...zap.Field) {
-	Logger.Error(msg, fields...)
+	logger.Error(msg, fields...)
 }
 
 func ErrorField(err error) zap.Field {
@@ -38,15 +42,15 @@ func ErrorField(err error) zap.Field {
 func LogMiddleware(router *gin.Engine) {
 	// Logs
 	// logger, _ := zap.NewProduction()
-	defer Logger.Sync()
+	defer logger.Sync()
 	// Add a ginzap middleware, which:
 	//   - Logs all requests, like a combined access and error log.
 	//   - Logs to stdout.
 	//   - RFC3339 with UTC time format.
-	router.Use(ginzap.Ginzap(Logger, time.RFC3339, true))
+	router.Use(ginzap.Ginzap(logger, time.RFC3339, true))
 	// Logs all panic to error log
 	//   - stack means whether output the stack info.
-	router.Use(ginzap.RecoveryWithZap(Logger, true))
+	router.Use(ginzap.RecoveryWithZap(logger, true))
 
 	// Skip a path
 	//r.Use(ginzap.GinzapWithConfig(logger, &ginzap.Config{
