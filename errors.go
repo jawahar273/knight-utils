@@ -8,6 +8,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
+var ErrInValidEntityID = fmt.Errorf("invalid entity id")
+var ErrInValidCurrencyFormat = fmt.Errorf("invalid currency/amount format")
+
 // Capture all mongo db error
 // return code and error
 func CaptureMongoError(err error) (int, error) {
